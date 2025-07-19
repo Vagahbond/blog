@@ -5,6 +5,9 @@ theme = "archie"
 copyright = "© Vagahbond"
 pygmentsstyle = "solarized-light"
 
+[params]
+ 	customcss = ["css/everforest.css"]
+
 [[params.social]]
 name = "GitHub"
 icon = "github"

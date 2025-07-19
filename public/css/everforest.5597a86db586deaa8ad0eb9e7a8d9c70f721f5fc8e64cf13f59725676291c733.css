@@ -1,0 +1,11 @@
+:root {
+  --maincolor: #8da101;
+  --bordercl: #8da101;
+  --callouctcolor: #3a94c5;
+  --hovercolor: #DF69BA;
+  --darkMaincolor: #a7c080;
+}
+
+body {
+  background-color: #fdf6e3;
+}
