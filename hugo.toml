@@ -7,6 +7,8 @@ pygmentsstyle = "solarized-light"
 
 [params]
  	customcss = ["css/everforest.css"]
+  customDarkCSS = ["css/everforest-dark.css"]
+  mode = "light"
 
 [[params.social]]
 name = "GitHub"
