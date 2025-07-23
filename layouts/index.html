@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	{{ partial "header.html" . }}
+	<body>
+		<div class="content">
+			{{ partial "head.html" . }}
+			
+			<main class="list">
+				<div class="site-description">
+          <p> 
+            🇫🇷 Développeur et amateur de tech, voyageur et réfléchisseur chronique, je vous livre mes réfléxions et expériences sur ce blog.
+            <br/>
+            <br/>
+            Vous trouverez un contenu majoritairement français, mais certains articles seront traduits en anglais.
+          </p> 
+        </div>
+        <div class="site-description">
+          <p>   
+            🇺🇸 Dev and tech enthousiast, traveller and chronix thinker, I share my thoughts and experiences here.
+            <br/>
+            <br/>
+            You will mostly find articles written in french, but some will be translated to english.
+          </p>
+				</div>
+				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+				{{ range $paginator.Pages }}
+				<section class="list-item">
+					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+					<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+          <!--
+					<br>{{ template "partials/pagedescription.html" . }}
+					<a class="readmore" href="{{ .RelPermalink }}">Read more ⟶</a>
+          -->
+				</section>
+				{{ end }}
+				{{ template "partials/paginator.html" . }}
+			</main>
+			{{ partial "footer.html" . }}
+		</div>
+		
+	</body>
+</html>
