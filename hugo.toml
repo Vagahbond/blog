@@ -4,24 +4,42 @@ title = 'Le blog de Vagahbond'
 theme = "archie"
 copyright = "© Vagahbond"
 pygmentsstyle = "solarized-light"
+defaultContentLanguage = "fr"
+
+[languages]
+  [languages.en]
+    contentDir = 'content/posts/en'
+    languageName = 'English'
+    languageCode = "en"
+    weight = 20
+  [languages.fr]
+    contentDir = 'content/posts/fr'
+    languageName = 'Français'
+    languageCode = "fr"
+    weight = 10
 
 [params]
  	customcss = ["css/everforest.css"]
   customDarkCSS = ["css/everforest-dark.css"]
   mode = "light"
+  description = "Lisez mes articles incendiaires sur l'état désastreux de la France et du monde de la tech, ou aidez vous de mes articles techniques et tutoriels pour mener vos projets à bien."
 
 [[params.social]]
 name = "GitHub"
 icon = "github"
 url = "https://github.com/vagahbond"
 
+[[menu.main]]
+name = "FR"
+url = "/"
+weight = 2
 
 [[menu.main]]
+name = "EN"
+url = "/en"
+weight = 3
+
+[[menu.posts]]
 name = "Home"
 url = "/"
 weight = 1
-
-[[menu.main]]
-name = "All posts"
-url = "/posts"
-weight = 2
