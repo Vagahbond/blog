@@ -45,7 +45,7 @@ Rassure toi. L'utilisation de ton moteur de recherche. et l'effort que tu fourni
 
 Cette intro aux relents de tunnel de vente de formations en développement personnel a du t'interpeller.  Quel est la place réelle de la tech là dedans ? 
 
-Ce blog s’adresse en premier lieu aux personnes de la tech, et vise à leur partager les observations que j'ai pu avoir en le fréquentant, et à proposer du contenu un peu plus savoureux que tout ce "AI Slop"(à défaut de traduction française) aseptisé.
+Ce blog s’adresse en premier lieu aux personnes de la tech, et vise à leur partager les observations que j'ai pu avoir en la fréquentant, et à proposer du contenu un peu plus savoureux que tout ce "AI Slop"(à défaut de traduction française) aseptisé.
 
 N'importe qui du milieu aura du mal à débattre de ça: en n'ayant que la tech, il est difficile de ne pas perdre pied. Ce n'est pas pour rien que l'expression "touch grass" (Touche de l'herbe) est aussi utilisée chez nous. Il est parfois difficile de regarder au dessus de son écran et de renouer avec les joies pures et les affres de la vie réelle. 
 
@@ -53,7 +53,7 @@ N'importe qui du milieu aura du mal à débattre de ça: en n'ayant que la tech,
 
 
 
-Ayant été un féru de tech très tôt dans ma vie, un gamer avide, et depuis près de 10 ans un dev, je pense savoir de quoi je parle. 
+Ayant été un féru de tech très tôt dans ma vie, un gamer avide, et depuis près de 10 ans un dev, je pense avoir fait le tour de la question. 
 
 C'est pourquoi voila déjà un an et demi, et pour encore plus d'un an, je suis allé  à l'autre bout du monde toucher de l'herbe (très littéralement), prendre du recul sur ce que j'ai vécu à Paris et vu sur les Discords et blogs communautaires , pour élargir ma vision du monde.
 
