@@ -22,7 +22,7 @@ defaultContentLanguage = "fr"
  	customcss = ["css/everforest.css"]
   customDarkCSS = ["css/everforest-dark.css"]
   mode = "light"
-  description = "Lisez mes articles incendiaires sur l'état désastreux de la France et du monde de la tech, ou aidez vous de mes articles techniques et tutoriels pour mener vos projets à bien."
+  description = "De la tech sans tabou, dans un blog purement humain et empreint de liberté."
 
 [[params.social]]
 name = "GitHub"

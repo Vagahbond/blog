@@ -1,8 +1,6 @@
-Educated software developper, I share with you tech watch articles, and tutorials that go light years beyond those cheap `hello world` and other to-do lists projects.
+Educated software developper, traveller and free spirit, I share with you my knowledge and thoughts about tech and beyond.
 
-Also expect polarizing but thought through takes about the tech world and sometimes beyond.
+*Note that some articles are mainly relevant in France, and those will not be translated*
 
-*Note that most articles will be written in french, and sometimes translated to english*
-
-Don't miss a single article thanks to [my RSS stream](/en/index.xml). 
+Don't miss a single of my **english** article thanks to [my RSS stream](/en/index.xml). 
 
