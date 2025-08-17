@@ -1,8 +1,8 @@
-baseURL = 'https://blog.vagahbond.com/'
+baseURL = 'https://touches-grasses.fr/'
 languageCode = 'fr-fr'
-title = 'Le blog de Vagahbond'
+title = 'Touches Grasses '
 theme = "archie"
-copyright = "© Vagahbond"
+copyright = "© Touches Grasses"
 pygmentsstyle = "solarized-light"
 defaultContentLanguage = "fr"
 
@@ -27,7 +27,6 @@ defaultContentLanguage = "fr"
 [[params.social]]
 name = "GitHub"
 icon = "github"
-url = "https://github.com/vagahbond"
 
 [[menu.main]]
 name = "FR"
