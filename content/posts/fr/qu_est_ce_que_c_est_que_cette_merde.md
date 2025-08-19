@@ -73,7 +73,7 @@ Je ne suis pas sociologue, ni expert doctorant en tech, et je connais ma place.
 
 Parfois, il va arriver que mes observations soient inexactes ou hors de propos.
 
-J'ai l'honnêteté d'admettre que je me situe au sein du problème que je dénonce, et je ma mentalité sera de continuer de m'améliorer, avec toi.
+J'ai l'honnêteté d'admettre que je me situe au sein du problème que je dénonce, et ma mentalité sera de continuer de m'améliorer, avec toi.
 
 Là ou je me différencie, c'est en posant la question: 
 
