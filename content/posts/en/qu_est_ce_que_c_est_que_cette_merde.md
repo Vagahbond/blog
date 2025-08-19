@@ -1,6 +1,6 @@
 ---
 date: '2025-07-26T17:12:56+10:00'
-draft: true
+draft: false
 title: "What the hell is this shit !?" 
 tldr: 'Yet another lame ass blog ?'
 ---
@@ -16,7 +16,7 @@ Picture this : You're comfy in your cheap ass gaming chair. Looking for a fix fo
 
 The question is not about why I'm dunking on everyone, but rather on why is everyone so bad.
 
-Why were our parents, even more their parents and mainly their ancestors seem to be so much more skilled ? 
+Why did our parents, even more their parents and mainly their ancestors seem to be so much more skilled ? 
 
 Not that they're perfect, all "social progress" is not to throw in the bin, but still there seems to be a standards, and a discipline gap.
 
@@ -35,9 +35,10 @@ What's the next step?
 
 &#x20; 
 
-Lets get out of overly technical skills for a moment: Why is an uneducated white collar worker keeping a tasks list on a noteshell not an absolute basic requirement ? Your job is litterlay to read and answer E-mails. Make cheap slides that you will proudly show during your next compulsive meeting, that will be forgotten well before the next week. This should not be so difficult! 
+Lets get out of overly technical skills for a moment: Why is an uneducated white collar worker keeping a tasks list on a noteshell not an absolute basic requirement ? Your job is litterlay to read and answer E-mails. Make cheap slides that you will proudly show during your next compulsive team meeting, that will be forgotten well before the next week. This should not be so difficult! 
 
-Putting my blog's glorious URL on the summit of your screen in your URL bar, you just opened Pandora's bpx. Whether or not you are willing to aknowledge truth in my statements, they hurt you. 
+Putting my blog's glorious URL on the summit of your screen in your URL bar, you just opened Pandora's box.
+Whether or not you are willing to aknowledge truth in my statements, they hurt you. 
 
 Worry not. Usage of your search engine, and the effort you are putting in reading this eminently human article already sets you appart from cockroaches that frantically smooth their brains through heavy LLM usage. 
 
@@ -45,9 +46,9 @@ Worry not. Usage of your search engine, and the effort you are putting in readin
 
 This introduction reminiscing of sales tunnel for personnal development coaching must have hit you somehow. But what really is tech's place in all that? 
 
-This blog mainly addresses to tech people, aiming to share with them observations I had in that world. It aims to propose something a bit more tasty than any asceptized AI slop. 
+This blog mainly addresses to tech people, aiming to share with them observations I had in those communities. It aims to propose something a bit more tasty than any asceptized AI slop. 
 
-Anyone from the tech world can hardly debate of that: having only tech in your life, it is hard not to lose ground. It is no surprise that the expression "touch grass" is so widely spread among us. It is sometimes harsh to look over one's screen and reconnext with pure joys and pangs of real life.
+Anyone from the tech world can hardly debate of that: having only tech in your life, it is hard not to lose ground. It is no surprise that the expression "touch grass" is so widely spread among us. It is sometimes harsh to look over one's screen and reconnect with pure joys and pangs of real life.
 
 ![](/assets/s0fodazJRTfz39ed3NfdYlM1pS8NGG4edHfbX9AV3_I=.png)
 
@@ -55,12 +56,11 @@ Anyone from the tech world can hardly debate of that: having only tech in your l
 
 Having been interested in tech early in my life, an avid gamer, and for a decade now a dev, I have been there enough to make up my mind. 
 
-That is why a year and a half ago, and for still more than the coming year, I have left to the other side of the world touch grass (quite litteraly), take a step back on what I lived in Paris and saw on discords and other social networks and blogs, and enlarge my views of the world.
+That is why a year and a half ago, and for more than the incoming year, I have left to the other side of the world to touch grass (quite litteraly), take a step back on what I lived in Paris and saw on discord servers and other social networks and blogs, and enlarge my views of the world.
 
 Be you in a dev-adjacent work environment, sedentary, a Twitter user or simply french, I hope to reach you with the enlightment that this step back allowed me to get. My goal is to make you laugh, motivate you into doing better, and show you another point of view on things
 
 The dev content will be a pillar of this blog but you may also expect takes beyond this topic.
-
 
 ## Conclusion
 
@@ -78,9 +78,14 @@ Where I am setting my self appart is when I ask:
 
 Knowing I am not really below average, I allow myself to widen this question:
 
-`Why are we so incompetents?`
+`Why are we so incompetent?`
 
 It is yours to make the most out of these questions and to have the smartest reaction to these attacks.
 
 Be brave enough to wonder why you are so bad.
 
+Expect that fewer articles will be published in english, because 
+1) I do not have the time to translate it all 
+2) You might not relate to France-specitif articles
+
+Please do use a browser extension to translate french if you really are interested.

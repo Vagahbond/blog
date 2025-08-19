@@ -1,6 +1,6 @@
 baseURL = 'https://touches-grasses.fr/'
 languageCode = 'fr-fr'
-title = 'Touches Grasses '
+title = ' Touches Grasses'
 theme = "archie"
 copyright = "© Touches Grasses"
 pygmentsstyle = "solarized-light"
@@ -22,7 +22,7 @@ defaultContentLanguage = "fr"
  	customcss = ["css/everforest.css"]
   customDarkCSS = ["css/everforest-dark.css"]
   mode = "light"
-  description = "De la tech sans tabou, dans un blog purement humain et empreint de liberté."
+  description = "Nettoie ton clavier et sors de ta bulle d'écho dans ce blog tech purement humain et empreint de liberté."
 
 [[params.social]]
 name = "GitHub"

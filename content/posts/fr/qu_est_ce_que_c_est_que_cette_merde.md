@@ -1,6 +1,6 @@
 ---
 date: '2025-07-26T17:12:56+10:00'
-draft: true
+draft: false
 title: "Qu'est ce que c'est que cette merde !?" 
 tldr: 'Encore un Nème blog claqué au sol ?'
 ---
@@ -55,11 +55,11 @@ N'importe qui du milieu aura du mal à débattre de ça: en n'ayant que la tech,
 
 Ayant été un féru de tech très tôt dans ma vie, un gamer avide, et depuis près de 10 ans un dev, je pense avoir fait le tour de la question. 
 
-C'est pourquoi voila déjà un an et demi, et pour encore plus d'un an, je suis allé  à l'autre bout du monde toucher de l'herbe (très littéralement), prendre du recul sur ce que j'ai vécu à Paris et vu sur les Discords et blogs communautaires , pour élargir ma vision du monde.
+C'est pourquoi voila déjà un an et demi, et pour encore plus d'un an, je suis allé  à l'autre bout du monde toucher de l'herbe (très littéralement), prendre du recul sur ce que j'ai vécu à Paris et vu sur les Discords et blogs communautaires, pour élargir ma vision du monde.
 
-Que vous soyez dans un milieu adjacent au dev, sédentaire, utilisateur de Twitter, ou simplement français, j’espère pouvoir vous toucher avec les réalisations que le recul m'a permis d'avoir. Mon but est de vous faire rire, de vous motiver à faire mieux, et de vous faire observer les choses d'un autre angle. 
+Que tu soies dans un milieu adjacent au dev, sédentaire, utilisateur de Twitter, ou simplement français, j’espère pouvoir te toucher avec les réalisations que le recul m'a permis d'avoir. Mon but est de te faire rire, de te motiver à faire mieux, et de te faire observer les choses d'un autre angle. 
 
-Le contenu "dev" sera un pilier de ce blog mais attendez vous à des prises de positions au delà de ce thème.
+Le contenu "dev" sera un pilier de ce blog mais attends toi à des prises de positions au delà de ce thème.
 
 
 
@@ -69,11 +69,11 @@ Mon avis est que dans la mentalité française, plus largement dans la mentalit�
 
 Quelque braves droits dans leurs bottes ont le cran de le faire, et ils m'ont inspiré à devenir l'un d'entre eux. 
 
-Je ne suis pas sociologue, ni expert doctorat en tech, et je connais ma place. 
+Je ne suis pas sociologue, ni expert doctorant en tech, et je connais ma place. 
 
 Parfois, il va arriver que mes observations soient inexactes ou hors de propos.
 
-J'ai l'honnêteté d'admettre que je me situe au sein du problème que je dénonce. 
+J'ai l'honnêteté d'admettre que je me situe au sein du problème que je dénonce, et je ma mentalité sera de continuer de m'améliorer, avec toi.
 
 Là ou je me différencie, c'est en posant la question: 
 
@@ -83,9 +83,11 @@ Conscient que je suis loin d'être en dessous de la moyenne, je me permet d'éte
 
 `Pourquoi sommes-nous si nul ?`
 
-À vous de tirer le mieux de ces questions et constats et de réagir intelligemment à ces affronts.
+À toi de tirer le mieux de ces questions et constats et de réagir intelligemment à ces affronts.
 
-Ayez l'audace de vous demander pourquoi vous êtes aussi nuls.
+aies l'audace de te demander pourquoi tu es aussi nuls.
+
+Rendez-vous dans une semaine pour un premier article haut en couleur !
 
 
 

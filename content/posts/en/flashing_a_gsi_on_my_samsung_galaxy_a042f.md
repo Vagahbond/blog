@@ -1,6 +1,6 @@
 ---
 date: '2024-05-17T17:22:56+10:00'
-draft: false
+draft: true
 title: 'Flashing a GSI on my Samsung Galaxy a042f'
 tldr: 'A technical guide at flashing a GSI on a shitty phone.'
 ---
