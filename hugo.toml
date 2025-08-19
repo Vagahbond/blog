@@ -24,10 +24,6 @@ defaultContentLanguage = "fr"
   mode = "light"
   description = "Nettoie ton clavier et sors de ta bulle d'écho dans ce blog tech purement humain et empreint de liberté."
 
-[[params.social]]
-name = "GitHub"
-icon = "github"
-
 [[menu.main]]
 name = "FR"
 url = "/"
