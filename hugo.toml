@@ -29,6 +29,11 @@ name = "X"
 icon = "x"
 url = "https://x.com/touchesgrasses"
 
+[[params.social]]
+name = "Instagram"
+icon = "instagram"
+url = "https://www.instagram.com/touchesgrasses/"
+
 [[menu.main]]
 name = "FR"
 url = "/"
