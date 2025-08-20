@@ -1,5 +1,5 @@
 ---
-date: '2025-07-26T17:12:56+10:00'
+date: '2025-08-18T17:12:56+10:00'
 draft: false
 title: "Qu'est ce que c'est que cette merde !?" 
 tldr: 'Encore un Nème blog claqué au sol ?'
@@ -85,7 +85,7 @@ Conscient que je suis loin d'être en dessous de la moyenne, je me permet d'éte
 
 À toi de tirer le mieux de ces questions et constats et de réagir intelligemment à ces affronts.
 
-aies l'audace de te demander pourquoi tu es aussi nuls.
+Aies l'audace de te demander pourquoi tu es aussi nul.
 
 Rendez-vous dans une semaine pour un premier article haut en couleur !
 
