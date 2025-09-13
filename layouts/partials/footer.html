@@ -6,16 +6,10 @@
     {{- else -}}
     <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}">{{ template "feathericon" (dict "Icon" $key.icon "UseCDN" .Site.Params.useCDN) }}</a>
     {{- end -}}
-    <a class="border"></a>
     {{- end -}}
   </div>
   <div class="footer-info">
-     {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }}  touches-grasses@pm.me | <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
-  </div>
+    - {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }}  touches-grasses@pm.me   </div>
 </footer>
 <script data-goatcounter="https://analytics.touches-grasses.fr/count"
         async src="//analytics.touches-grasses.fr/count.js"></script>
-{{ if not hugo.IsServer }}
-{{ template "_internal/google_analytics.html" . }}
-{{ end }}

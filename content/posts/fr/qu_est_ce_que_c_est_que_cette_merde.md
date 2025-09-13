@@ -93,7 +93,7 @@ Conscient que je suis loin d'être en dessous de la moyenne, je me permets d'ét
 
 Aie l'audace de te demander pourquoi tu es aussi nul.
 
-Rendez-vous dans une semaine pour un premier article haut en couleur !
+Rendez-vous prochainement pour un premier article haut en couleur !
 
 
 
