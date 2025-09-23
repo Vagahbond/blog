@@ -9,3 +9,8 @@
 body {
   background-color: #fdf6e3;
 }
+
+img {
+  max-width: 40%;
+  margin-left: 30%;
+}

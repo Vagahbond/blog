@@ -75,3 +75,6 @@ Ensemble, à travers de nombreux exemples et réflexions, nous allons dresser un
 
 Abonne-toi au [flux RSS](https://touches-grasses.fr/index.xml) pour être sûr de ne rater aucun article.
 
+Ne rate pas la suite, qui débarquera en trombe la semaine prochaine ~
+
+
