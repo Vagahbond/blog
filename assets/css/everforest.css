@@ -1,16 +1,31 @@
 :root {
   --maincolor: #8da101;
-  --bordercl: #8da101;
   --callouctcolor: #3a94c5;
   --hovercolor: #8da101;
-  --darkMaincolor: #a7c080;
+
+  --color-primary: #8da101;
+  --color-primary-hover: #8da101;
+  --color-border: #8da101;
+  --color-callout: #1e90ff;
+  --color-text: #232333;
+  --color-text-muted: #737373;
+  --color-text-meta: #999999;
+  --color-background: #fdf6e3;
+  --color-background-code: #E6E2CC;
+  --color-background-pre: #E6E2CC;
+  --color-background-toc: #E6E2CC;
+  --color-background-draft: #E6E2CC;
+
 }
 
-body {
-  background-color: #fdf6e3;
+a:hover {
+  outline: none;
+  border-left: 3px solid var(--color-primary);
+  border-right: 3px solid var(--color-primary);
 }
 
 img {
-  max-width: 40%;
+  max-width: 60%;
+  max-height: 60vh;
   margin-left: 30%;
 }
