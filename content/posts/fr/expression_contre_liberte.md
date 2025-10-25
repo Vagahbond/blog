@@ -43,8 +43,11 @@ En Angleterre, ils ne perdent pas non plus de temps sur la question.  [Là-bas p
 Imaginez la discussion avec ses camarades de cellules : 
 
 > \- "Pourquoi t'es là toi ?"
+>
 > \-  "Vol à main armée et trafic de drogue, et toi?" 
+>
 > \-  "J'ai Twitté un truc raciste"
+>
 > \-  "Dinguerie"
 
 Plutôt dystopique, non? 
