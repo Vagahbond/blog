@@ -18,10 +18,13 @@
 
 }
 
-a:hover {
+a:hover,
+.soc:hover {
   outline: none;
-  border-left: 3px solid var(--color-primary);
-  border-right: 3px solid var(--color-primary);
+}
+
+.soc:hover {
+  color: var(--color-background);
 }
 
 img {
