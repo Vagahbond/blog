@@ -1,9 +1,10 @@
 ---
 date: '2025-10-06T10:12:56+10:00'
 draft: false
-title: "[Souveraineté 4/6] Censurer le fascisme" 
+title: "Censurer le fascisme" 
 tldr: "Comment ils te protègent des fachos"
 series: 'Souveraineté des données'
+index: 4
 ---
 Vous avez sûrement entendu parler de ce qu'il se passe si vous postez certains [mots spécifiques](https://citizenlab.ca/2014/12/repository-censored-sensitive-chinese-keywords-13-lists-9054-terms/) sur des services en Chine. Votre compte peut être supprimé immédiatement. 
 

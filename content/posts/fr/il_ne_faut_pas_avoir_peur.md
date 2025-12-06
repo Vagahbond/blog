@@ -1,9 +1,10 @@
 ---
 date: '2025-09-30T10:12:56+10:00'
 draft: false
-title: "[Souveraineté 3/6] Il ne faut pas avoir peur" 
+title: "Il ne faut pas avoir peur" 
 tldr: "Après tout, si vous n'avez rien à vous reprocher..."
 series: 'Souveraineté des données'
+index: 3
 ---
 Puisqu'on parle de souveraineté, il est nécessaire de rappeler que ce n'est pas un terme qui décrit parfaitement la situation du peuple français en France, ni la position de la France face à l'UE, et pire, aux EU. Les entités comme les gouvernements ont des intérêts, et si l'UE et la CNIL se donnent des airs de croisés face aux vilaines giga-corpo, ça ne signifie pas nécessairement qu'on est entre de bonnes mains. 
 

@@ -1,9 +1,10 @@
 ---
 date: '2025-09-23T10:12:56+10:00'
 draft: false
-title: "[Souveraineté 2/6] Tes données à -90% sur TEMU" 
+title: "Tes données à -90% sur TEMU" 
 tldr: 'Ce que les mégacorpo font pour mieux te connaitre'
 series: 'Souveraineté des données'
+index: 2
 ---
 
 

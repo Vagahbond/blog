@@ -1,9 +1,10 @@
 ---
 date: '2025-10-13T10:12:56+10:00'
 draft: false
-title: "[Souveraineté 5/6] Expression contre liberté" 
+title: "Expression contre liberté" 
 tldr: "La liberté d'expression: à l'envers"
 series: 'Souveraineté des données'
+index: 5
 ---
 
 Maintenant, tu sais que des mecs en costumes ont un peu trop envie de se glisser dans tes messages privés. Tu sais aussi que tu as intérêt à lisser ton discours et peut-être ta pensée, si tu veux avoir le droit de t'exprimer sans te faire saper ta visibilité, et que par effet inverse, internet a tendance à mettre sous ton nez les choses les plus aseptisées. Heureusement, tu peux te contenter de fermer ton ordinateur, toucher de l'herbe, et tout ça n'aura plus tant d'importance. Hein ? HEIN?

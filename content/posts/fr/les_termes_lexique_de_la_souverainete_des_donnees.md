@@ -1,9 +1,10 @@
 ---
 date: '2025-09-13T11:12:56+10:00'
 draft: false
-title: "[Souveraineté 1/6] Les termes: lexique de la souveraineté des données" 
+title: "Les termes: lexique de la souveraineté des données" 
 tldr: 'Quelques termes à définir avant de dresser un portrait de la liberté en ligne'
 series: 'Souveraineté des données'
+index: 1
 ---
 
 ![](/assets/qdbkGEu5jRr5C7r0vlFoPT24yLV9oKojUHMEyIqjyjI=.png "Singes de la sagesse par Andreas Magnusson")

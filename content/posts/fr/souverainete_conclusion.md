@@ -1,9 +1,10 @@
 ---
 date: '2025-10-20T10:12:56+10:00'
 draft: false
-title: "[Souveraineté 6/6] Conclusion" 
+title: "Conclusion" 
 tldr: "Ce que je pense de tout ce merdier"
 series: 'Souveraineté des données'
+index: 6
 ---
 Dans un premier temps, ta souveraineté sur tes données personnelles n'est pas tellement prise au sérieux par les grandes entreprises et si tu utilises les appareils de base - PC sous Windows avec Chrome, téléphone sous Android avec les apps Meta, sans aucune modification - la RGPD ne pourra rien faire pour te sauver, un profil associé à ta personne sera automatiquement alimenté pour te proposer les meilleures publicités.
 

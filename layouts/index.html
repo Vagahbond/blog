@@ -15,8 +15,15 @@
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 				<section class="list-item">
+        {{ if .Params.series }}
+        {{ $serie := where .Site.RegularPages "Params.series" .Params.series }}
 					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
 					<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+          {{ .Params.series }}[{{ .Params.index }}/{{ $serie.Len }}] <br/>
+        {{ else }}
+					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+					<time>{{ dateFormat ":date_medium" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>
+        {{ end }}
           {{ .Params.Tldr }}
           <a class="readmore" href="{{ .RelPermalink }}">{{ i18n "read_more" }} ⟶</a>
 				</section>
