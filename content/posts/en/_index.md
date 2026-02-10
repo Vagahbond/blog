@@ -1,8 +1,5 @@
-Instead of eating your tendies sitting at your desk while scrolling 1 minute long videos with the other hand, come and fill up your motivation to improve.
+Sorry but as to now, this blog is only available in French. 
 
-You will find **embodied** and **humane** articles, written with **heart**.
+I might drop in some translations in the future, but this takes time.
 
-*Note that some articles are mainly relevant in France, and those will not be translated*
-
-Don't miss a single of my **english** article thanks to [my RSS stream](/en/index.xml). 
-
+If you want to enjoy my content, you can use a browser extention to auto-translate it.
