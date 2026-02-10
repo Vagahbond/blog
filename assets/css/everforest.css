@@ -27,6 +27,10 @@ a:hover,
   color: var(--color-background);
 }
 
+p {
+  margin-block: 1.2rem;
+}
+
 img {
   max-width: 60%;
   max-height: 60vh;
