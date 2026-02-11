@@ -31,6 +31,27 @@ p {
   margin-block: 1.2rem;
 }
 
+.divider {
+  margin-top: 1rem;
+  border-top: 0.4rem dotted var(--color-border, #663399);
+}
+
+.subtitle {
+  border-left: 3px solid var(--color-border, #663399);
+  font-size: 1rem;
+  padding-left: 1em;
+}
+
+.pagination {
+  text-align: right;
+  padding-right: 1em;
+  margin-top: 2em;
+}
+
+.page-item {
+  padding: 0 0.5em;
+}
+
 img {
   max-width: 60%;
   max-height: 60vh;

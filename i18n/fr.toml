@@ -1,1 +1,5 @@
-read_more = "Lire plus"
+read_more = "Lire ce banger"
+my_series= "Séries"
+my_articles = "Fraichement sorti des fourneaux"
+prev_page = "Page précédente"
+next_page = "Page suivante"
