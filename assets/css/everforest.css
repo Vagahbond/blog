@@ -55,5 +55,6 @@ p {
 img {
   max-width: 60%;
   max-height: 60vh;
-  margin-left: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
