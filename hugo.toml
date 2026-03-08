@@ -24,10 +24,10 @@ defaultContentLanguage = "fr"
   mode = "light"
   description = "Nettoie ton clavier et sors de ta bulle d'écho dans ce blog tech purement humain et empreint de liberté."
 
-[[params.social]]
-name = "X"
-icon = "x"
-url = "https://x.com/touchesgrasses"
+# [[params.social]]
+# name = "X"
+# icon = "x"
+# url = "https://x.com/touchesgrasses"
 
 [[params.social]]
 name = "Instagram"

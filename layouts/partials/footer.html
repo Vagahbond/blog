@@ -1,15 +1,15 @@
 <footer>
-  <div style="display:flex">
-    {{- range $index, $key := .Site.Params.Social -}}
-    {{- if hasPrefix $key.icon "simple:" -}}
-    <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i class="si si-{{ substr $key.icon 7 }}"></i></a>
-    {{- else -}}
-    <a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}">{{ template "feathericon" (dict "Icon" $key.icon "UseCDN" .Site.Params.useCDN) }}</a>
-    {{- end -}}
-    {{- end -}}
-  </div>
-  <div class="footer-info">
-    - {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }}  touches-grasses@pm.me   </div>
+	<div style="display:flex">
+		{{- range $index, $key := .Site.Params.Social -}}
+		{{- if hasPrefix $key.icon "simple:" -}}
+		<a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"><i class="si si-{{ substr $key.icon 7 }}"></i></a>
+		{{- else -}}
+		<a class="soc" href="{{ $key.url }}" rel="me" title="{{ $key.name }}">{{ template "feathericon" (dict "Icon" $key.icon "UseCDN" .Site.Params.useCDN) }}</a>
+		{{- end -}}
+		{{- end -}}
+	</div>
+	<div class="footer-info">
+		&nbsp; {{ with .Site.Copyright }} {{ . }}  {{ end }}
+	</div>
+	<script data-goatcounter="https://analytics.touches-grasses.fr/count" async src="//analytics.touches-grasses.fr/count.js"></script>
 </footer>
-<script data-goatcounter="https://analytics.touches-grasses.fr/count"
-        async src="//analytics.touches-grasses.fr/count.js"></script>

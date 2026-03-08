@@ -18,6 +18,25 @@
 
 }
 
+@font-face {
+  font-family: "DepartureMono";
+  src: url("/fonts/DepartureMono-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+.meta,
+footer {
+  font-family: "DepartureMono";
+}
+
 a:hover,
 .soc:hover {
   outline: none;
@@ -29,6 +48,11 @@ a:hover,
 
 p {
   margin-block: 1.2rem;
+}
+
+li {
+  font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin-top: 0.5rem;
 }
 
 .divider {
@@ -50,6 +74,11 @@ p {
 
 .page-item {
   padding: 0 0.5em;
+}
+
+.footer-info {
+  text-align: center;
+  margin-left: auto;
 }
 
 img {
