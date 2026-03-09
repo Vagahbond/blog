@@ -116,7 +116,7 @@ C'est là qu'on parle de configuration. Il existe 3 types de modules courants, f
 
 **Les nixosModules :**
 
-[Nixos](https://nixos.org) est un système d'exploitation qui est entièrement généré par un module `nix`. C'est un module géant avec PLEIN d'options, et dont l'output, le résultat, est un gigantesque nix-store, donc émerge un OS fait à base de symlinks. 
+[Nixos](https://nixos.org) est un système d'exploitation qui est entièrement généré par un module `nix`. C'est un module géant avec PLEIN d'options, et dont l'output, le résultat, est un gigantesque nix-store, dont émerge un OS fait à base de symlinks. 
 
 Avec ce système de configurations basé sur du code `nix`, on peut faire facilement des snapshots du système et revenir en arrière quand on fait une singerie dans la configuration profonde de l'OS.
 
@@ -130,7 +130,7 @@ Certains modules extérieurs sont faits pour être importés dans une configurat
 
 **Les modules nix-darwin :**
 
-S'il est possible de gérer un OS entier avec `nix`, il est aussi possible d'en gérer une partie. C'est là qu'intervient [nix-darwin](https://github.com/nix-darwin/nix-darwin). Ce projet apporte la beauté de la reproductibilité aux pigeons amateurs de la pomme croquée.
+S'il est possible de gérer un OS entier avec `nix`, il est aussi possible d'en gérer une partie. C'est là qu'intervient [nix-darwin](https://github.com/nix-darwin/nix-darwin). Ce projet apporte la beauté de la reproductibilité aux vaches à lait mordues de la pomme croquée.
 
 Ici, pas de `systemd`, moins d'accès sur la machine, un système d'utilisateurs un peu différent.
 
@@ -162,7 +162,7 @@ En règle générale, on installe soit un des trois, soit un des deux premiers, 
 
 Ensuite, pour chaque programme que l'on veut utiliser, soit il est déjà  présent dans NixOS ou Nix-Darwin, soit il n'y est pas. Il peut alors exister en dehors, dans un `flake` qui contient son propre module. 
 
-Il est aussi possible de créer ses propres modules au sein de sa propre configuration, par exemple pour réutiliser du code entre différents hôtes avec des valeurs différentes çà et là ou utiliser ses propres programmes. Ou que sais-je encore, chacun est libre de sur-ingénierie selon ses goût.
+Il est aussi possible de créer des modules au sein de sa configuration, par exemple pour réutiliser du code entre plusieurs hôtes avec des valeurs différentes çà et là, ou encore utiliser ses propres programmes. Ou que sais-je encore, chacun est libre de sur-ingénierie selon ses goûts.
 
 C'est quoi un `flake` ? Ce concept-là mérite un (ou 10) article à lui tout seul. Pour le moment, on essaye de comprendre c'est quoi Nix, et à quoi ça sert.
 
@@ -204,7 +204,7 @@ Petit récap :
 
 **Moi aussi, je veux nixer mon ordi !**
 
-Nixer son ordi, c'est un processus qui prend du temps, et qui peut te mettre dans la sauce si tu te foire. Tu sais ce qu'on dit sur les premières fois...
+Nixer son ordi, c'est un processus qui prend du temps, et qui peut te mettre dans la sauce si tu te foires. Tu sais ce qu'on dit sur les premières fois...
 
 Je peux tout à fait comprendre que ce soit intimidant. 
 
@@ -212,7 +212,8 @@ Ce qui est généralement conseillé, c'est le processus suivant :
 
 1. Utiliser `nix` uniquement sous forme de packages et de shells sur ta distro actuelle, en gardant ton workflow intact
 2. Installer home-manager/nix-darwin si tu es intéressé par la configuration de ton système mais veux garder ton OS
-3. Tu es devenu accroc à la reproduction ? Tu veux mettre un pied dans NixOS ? deux façons de s'y mettre petit à petit sans s'auto saboter :
+3. Tu es devenu accroc à la reproduction ? Tu veux mettre un pied dans NixOS ? 
+Deux façons de s'y mettre petit à petit sans s'auto saboter :
    1. Faire un serveur NixOS sur du vieux matos ou un VPS à 2 balles
    2. Faire une VM sur ta machine, et créer petit à petit une config avec laquelle tu te sens de travailler, avant de l'installer sur ta machine. 
 4. Une fois l'étape précédente passée, t'es finito pipo, ton addiction au nixage ne peut plus être soignée. Tu vas passer 10 heures par semaine à configurer, tu le feras sans même y être forcé.
