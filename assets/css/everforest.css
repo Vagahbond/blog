@@ -87,3 +87,20 @@ img {
   margin-left: 20%;
   margin-right: 20%;
 }
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.main>a {
+  margin-top: auto;
+  margin-left: 1em;
+}
+
+.logo {
+  width: 3em;
+  height: 3em;
+  margin: 0;
+  border: none
+}
