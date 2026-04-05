@@ -7,11 +7,11 @@ pygmentsstyle = "solarized-light"
 defaultContentLanguage = "fr"
 
 [languages]
-  [languages.en]
-    contentDir = 'content/posts/en'
-    languageName = 'English'
-    languageCode = "en"
-    weight = 20
+  # [languages.en]
+  #   contentDir = 'content/posts/en'
+  #   languageName = 'English'
+  #   languageCode = "en"
+  #   weight = 20
   [languages.fr]
     contentDir = 'content/posts/fr'
     languageName = 'Français'
@@ -35,14 +35,14 @@ icon = "instagram"
 url = "https://www.instagram.com/touchesgrasses/"
 
 [[menu.main]]
-name = "FR"
-url = "/"
+name = "Articles"
+url = "/posts"
 weight = 2
 
-[[menu.main]]
-name = "EN"
-url = "/en"
-weight = 3
+# [[menu.main]]
+# name = "EN"
+# url = "/en"
+# weight = 3
 
 [[menu.posts]]
 name = "Home"
