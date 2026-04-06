@@ -10,19 +10,29 @@ declare global {
 
     type MdsvexResolver = () => Promise<MdsvexFile>;
 
-    interface BlogPost {
+    interface ArticleMetaData {
       title: string,
       date: Date,
       draft: boolean,
       tldr: string,
-      series: string,
-      index: number
+      series?: string,
+      index?: number
     }
 
-    interface SeriesInfo {
+    interface SeriesData {
       name: string,
-      len: number,
+      articles: Array<ArticleMetaData>
     }
+
+    interface Article {
+      filename: string,
+      url: string,
+      metadata: ArticleMetaData,
+      seriesData?: SeriesData,
+      content?: any,
+
+    }
+
 
     // interface Error {}
     // interface Locals {}

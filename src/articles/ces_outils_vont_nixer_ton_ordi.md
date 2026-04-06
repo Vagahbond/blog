@@ -11,7 +11,7 @@ Dans les articles précédents, on a vu que `nix` était un gestionnaire de paqu
 
 
 
-Dans cet article, on va expliquer dans les grandes ligne&#x73;*&#x20;*&#x63;e qu'est un module `nix`, et ainsi compléter, je l'espère, ta compréhension de ce qu'est `nix` en tant qu'éco-système. 
+Dans cet article, on va expliquer dans les grandes lignes ce qu'est un module `nix`, et ainsi compléter, je l'espère, ta compréhension de ce qu'est `nix` en tant qu'éco-système. 
 
 
 

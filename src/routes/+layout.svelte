@@ -1,14 +1,11 @@
 <script lang="ts">
+	import { setArticlesContext } from '$lib/articles/articles.js';
 	import './archie.css';
 	import './style.css';
-	import favicon from '$lib/assets/favicon.svg';
 
-	let { children } = $props();
+	let { data, children } = $props();
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
 <div class="content">
 	<header>
 		<div class="main">
@@ -19,6 +16,32 @@
 			<a href="/articles">Articles</a>
 		</nav>
 	</header>
-
-	{@render children()}
+	<main>
+		{@render children()}
+	</main>
+	<footer>
+		<div style="display:flex">
+			<a class="soc" href="https://www.instagram.com/touchesgrasses/" rel="me" title="Instagram">
+				<img
+					alt="Instagram"
+					height="24"
+					width="24"
+					src="https://unpkg.com/simple-icons@v16/icons/instagram.svg"
+				/>
+				<img
+					alt="TikTok"
+					height="24"
+					width="24"
+					src="https://unpkg.com/simple-icons@v16/icons/tiktok.svg"
+				/>
+			</a>
+		</div>
+		<div class="footer-info">&nbsp; © Touches Grasses</div>
+	</footer>
 </div>
+
+<style>
+	.soc {
+		background-color: transparent;
+	}
+</style>

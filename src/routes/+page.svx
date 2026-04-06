@@ -1,0 +1,66 @@
+<script lang="ts">
+	const { data } = $props();
+
+    const last: App.Article | undefined = $derived(data?.articles.at(-1))
+
+    const date = $derived(
+      new Intl.DateTimeFormat(
+        'fr-FR', 
+        {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        }).format(new Date(last.metadata.date))
+    )
+
+</script>
+
+<div class="site-description">
+    <section class="body">
+
+
+Tu peux t'empiffrer ton tacos 8 viandes supplément fromage à ton bureau, en scrollant des vidéos au format
+vertical et qui durent 1 minute avec l'autre main;
+
+Ou alors, tu peux te distinguer des végétaux intellectuels
+symptomatiques de notre époque et brûler ton gras mental en lisant mes articles **incarnés** et profondément
+**humains**, écrits avec le **coeur** et les **tripes**.   
+
+En attendant que l'on puisse vibe-écrire des
+blogs qui ont un minimum de panache, touches de l'herbe et ne rate aucun de mes pavelards grâce à [mon
+flux RSS](/index.xml).
+
+# Fraichement sorti des fourneaux
+        {#if last?.metadata.series}
+
+            <h2 class="title">
+                {last?.seriesData.name} [{last?.metadata.index}/{last?.seriesData.articles.length}]<br>
+            </h2>
+
+            <b class="subtitle">
+                {last?.metadata.title}
+            </b>
+            <br/>
+            <time>{date}</time>
+            {last.metadata.tldr}
+            <a class="readmore" href="/articles/{last?.url}">Lire ce banger ⟶</a>
+        {:else}
+            <h2 class="title">
+                  {last?.metadata.title}
+            </h2>
+            <b class="subtitle">
+              {last.metadata.tldr}
+            </b>
+            <br/>
+            <time>{date}</time>
+            <a class="readmore" href="/articles/{last?.url}">Lire ce banger ⟶</a>
+        {/if}
+    </section>
+<div class="divider"></div>
+
+
+
+
+
+</div>
+
