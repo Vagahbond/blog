@@ -12,7 +12,7 @@ declare global {
 
     interface ArticleMetaData {
       title: string,
-      date: Date,
+      date: string,
       draft: boolean,
       tldr: string,
       series?: string,
