@@ -1,6 +1,8 @@
 import { assertArticleMetaData } from '$lib/articles/articles';
 import type { LayoutLoad } from './$types';
 
+export const prerender = true;
+
 export const load: LayoutLoad = async () => {
   const modules = import.meta.glob(`/src/articles/*.md`) as { [path: string]: App.MdsvexResolver };
 

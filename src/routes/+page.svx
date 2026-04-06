@@ -41,8 +41,10 @@ flux RSS](/index.xml).
                 {last?.metadata.title}
             </b>
             <br/>
+           
             <time>{date}</time>
             {last.metadata.tldr}
+            <br/>
             <a class="readmore" href="/articles/{last?.url}">Lire ce banger ⟶</a>
         {:else}
             <h2 class="title">

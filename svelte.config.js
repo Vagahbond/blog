@@ -5,12 +5,8 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    prerender: {
-      handleHttpError: ({ path, _, message }) => {
-        throw new Error(message);
-      }
-    },
-    adapter: adapter()
+    adapter: adapter({ assets: 'build', pages: 'build' })
+
   },
   extensions: ['.svelte', '.svx', '.md'],
   preprocess: [vitePreprocess(), mdsvex({ extensions: ['.svx', '.md'] })],

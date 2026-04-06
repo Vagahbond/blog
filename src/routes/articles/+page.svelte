@@ -4,6 +4,10 @@
 	const series: { [series: string]: Array<App.Article> } = $derived.by(() => {
 		return data.articles
 			.filter((a) => a.seriesData)
+			.sort(
+				(a, b) =>
+					new Date(b.metadata.date ?? '').valueOf() - new Date(a.metadata.date ?? '').valueOf()
+			)
 			.reduce((pr: { [series: string]: Array<App.Article> }, cur) => {
 				if (!cur.seriesData?.name) return {};
 
@@ -22,7 +26,7 @@
 			.filter((a) => !a.seriesData)
 			.sort(
 				(a, b) =>
-					new Date(a.metadata.date ?? '').valueOf() - new Date(b.metadata.date ?? '').valueOf()
+					new Date(b.metadata.date ?? '').valueOf() - new Date(a.metadata.date ?? '').valueOf()
 			);
 	});
 
@@ -55,7 +59,7 @@
 		{/each}
 	</section>
 {/each}
-
+<br />
 <div class="divider"></div>
 
 <h1 class="title">Articles seuls</h1>
