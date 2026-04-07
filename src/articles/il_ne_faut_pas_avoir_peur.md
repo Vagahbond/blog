@@ -10,7 +10,6 @@ Puisqu'on parle de souveraineté, il est nécessaire de rappeler que ce n'est pa
 
 &#x20; 
 
-![](/assets/WCiyJRQaRViKq6o-SH8EWiHcGctHVdKiNybXb1KayVc=.png)
 
 
 
@@ -26,7 +25,6 @@ Tout ça est effrayant, mais cette révélation n'a certainement pas poussé les
 
 En fait, aujourd'hui ces programmes voient publiquement le jour, sous ton nez et ceux de tous, justifiés par des combats fantoches contre la criminalité (qui, elle, est bien réelle, je ne le nie pas). Après tout, si tu n'as rien à te reprocher, il ne faut pas avoir peur !
 
-![](/assets/_N3OyobadRVBlQlPndykrUMh4tEL-21uIpeKxFdCKE0=.png)
 
 On peut, par exemple, se questionner sur l'obsession du gouvernement des roast-beefs [avec le fait d'avoir une back-door sur les services chiffrés en e2e, qu'il s'agisse de Signal, de l'iCloud, ou de WhatsApp.](https://www.techradar.com/computing/cyber-security/we-will-not-walk-back-signal-would-rather-leave-the-uk-and-sweden-than-remove-encryption-protections)
 
@@ -59,7 +57,6 @@ En effet, ces applications appartiennent à Meta, une entreprise qui, il faut le
 
 D'un point de vue technique, c'est donc la même permission qui permet aux apps de se connecter à internet, et de faire un Daemon en localhost qui écoute tout ce qu'on lui envoie sur un port. D'autant plus que cette permission, sur Android de base, est promulguée par défaut à toutes les apps... Pratique.
 
-![](/assets/zFoTt-ah17PNVGqmAI00IlL1wLBPhl4rml47Ru36zaA=.png)
 Bon. Garde ton chapeau sous la main, tu en auras encore besoin. 
 
 Ne rate pas la suite, qui débarquera en trombe la semaine prochaine ~

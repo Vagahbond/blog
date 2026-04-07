@@ -55,7 +55,6 @@ En somme, on peut conclure que tout va bien :
 
 Tant que tu n'es pas un odieux fasciste haineux avec des opinions, les défenseurs des droits et de la démocratie ne porteront pas atteinte à ton droit de t'exprimer en ligne.  Par extension, ces héros ne permettront à personne de heurter ta sensibilité et sauront sévir en cas de tentative.
 
-![](/assets/pBKjc0Knadfdqy3TBPVXThskiNjGVJGCWM9dsBXze24=.png)
 
 Ne rate pas la suite, qui débarquera en trombe la semaine prochaine ~
 

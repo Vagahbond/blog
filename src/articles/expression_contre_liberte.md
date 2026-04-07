@@ -9,7 +9,6 @@ index: 5
 
 Maintenant, tu sais que des mecs en costumes ont un peu trop envie de se glisser dans tes messages privés. Tu sais aussi que tu as intérêt à lisser ton discours et peut-être ta pensée, si tu veux avoir le droit de t'exprimer sans te faire saper ta visibilité, et que par effet inverse, internet a tendance à mettre sous ton nez les choses les plus aseptisées. Heureusement, tu peux te contenter de fermer ton ordinateur, toucher de l'herbe, et tout ça n'aura plus tant d'importance. Hein ? HEIN?
 
-![](/assets/xdPS_KiPGlFJTSmhNaAKQUBxjwPRkryDTCK_W45Ww4M=.png)
 
 En fin 2024, [un homme a été licencié](https://www.tf1info.fr/vie-pro/entreprise-salarie-de-l-oise-licencie-apres-l-envoi-d-un-gif-d-homer-simpson-que-s-est-il-passe-2329794.html) pour avoir posté un même sur sa messagerie professionnelle pour déconner un peu. Bon... Injuste, mais risible : [Il y a aussi ce patron](https://www.lefigaro.fr/medias/le-patron-du-groupe-de-presse-ebra-philippe-carli-demissionne-20250128) poussé à la démission par les justiciers de **Médiapart**. Il avait eu le malheur de *liker* des posts de Sarah Knafo sur LinkedIn. 
 
@@ -63,7 +62,6 @@ Pourquoi vouloir garder ses interactions en réseau pour soi, sans faire croquer
 
 POSE DOUCEMENT CE MANUEL DE CYBERSÉCURITÉ SUR LE SOL !
 
-![](/assets/holY2WioU4qEflHnG6Q9HsVNnbSoOT-zuq1KpWhCEss=.png)
 
 
 Outre l'incompétence bien décrite dans l'article de LQDN, l'utilisation **INSUPPORTABLE&#x20;**&#x64;es mots "cryptage" et "crypté" au lieu de "chiffrement" et "chiffré", on voit se profiler, entre cette affaire et les précédentes, une réelle volonté de contrôle sur l'utilisation de l'outil informatique par la populace.

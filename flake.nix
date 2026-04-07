@@ -33,20 +33,15 @@
       });
 
       devShells = forAllSystems (pkgs: {
-        default =
-          let
-            db = import ./nix/database.nix { inherit pkgs; };
-          in
-          pkgs.mkShell {
-            buildInputs = with db; [
-              pkgs.nodejs
-            ];
+        default = pkgs.mkShell {
+          buildInputs = [
+            pkgs.nodejs
+          ];
 
-            shellHook = ''
-
-              echo Now developping my blog!
-            '';
-          };
+          shellHook = ''
+            echo Now developping my blog!
+          '';
+        };
       });
     };
 }

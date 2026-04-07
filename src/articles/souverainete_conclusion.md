@@ -38,7 +38,6 @@ Par ailleurs, malgré mon opinion pas fameuse sur les gens qui n'ont pas aimé l
 
 Oui, ça s'appelle internet, et ça a toujours été le bordel. Il s'agirait de grandir et de se responsabiliser.
 
-![](/assets/sGNVaoKynaIU0FmWKbwmZDKDlW3dNy-WpLY4LL7W6rM=.png)
 
 &#x20;Soit tu acceptes que c'est le bordel et tu apprends à y naviguer, soit tu fermes ton ordinateur et tu fais autre chose. La vie regorge de choses à faire. 
 
@@ -60,7 +59,6 @@ J’espère que cette série d'articles t'aura plu. Tout ce qui a été dit peut
 
 Et rien de plus simple avec mon sponsor du jour, Ground Ne... non, je déconne.
 
-![](/assets/9TTx2nYHjKSBTTRN8Rp9vSlrGh_mwdD6pQXDopqD-cQ=.png)
 
 
 

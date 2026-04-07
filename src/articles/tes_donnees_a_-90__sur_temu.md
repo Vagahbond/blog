@@ -34,7 +34,6 @@ Bon, alors tu te demandes peut-être encore où est le problème. Déjà, beauco
 
 Parle de quelque chose près de ton téléphone, et tout d'un coup, cette chose commence à apparaître sur tes feeds. Tiens, tiens tiens...
 
-![](/assets/xgKcYeW-FxaUMAW_TBsCPK-SJmTBlyUR44jMA9ycAHI=.png)
 
 
 
