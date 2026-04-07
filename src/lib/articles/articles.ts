@@ -40,69 +40,50 @@ export function assertArticleMetaData(
     throw new Error(`[${path}] frontmatter.index must be a number, got ${typeof d.index}`);
   }
 }
-//
-// export async function getArticlesData(): Promise<Array<App.BlogPost | null>> {
-//   const articles = fs.readdirSync("src/lib/articles").filter(f => f.endsWith(".md")).map(f => fs.readFileSync(`src/lib/articles/${f}`).toString());
-//
-//   const compiled = await Promise.all(articles.map(a => compile(a)));
-//
-//   return compiled.map(c => c?.data?.fm as App.BlogPost)
-//
-// }
-//
-// export async function getArticleSeries(series: string): Promise<App.SeriesInfo> {
-//   const articles = await getArticlesData();
-//
-//   const nb = articles.filter(a => a?.series === series).length
-//
-//   return { len: nb, name: series }
-// }
-//
-// export async function getSingleArticle(name: string): Promise<any> {
-//   const article = fs.readFileSync(`src/lib/articles/${name}`)?.toString();
-//
-//   if (!article) {
-//     throw `Article ${name} does not exist !`
-//
-//
-//     return await compile(article)
-//   }
 
-// export async function getArticles(): Promise<App.Article[]> {
-//
-//   const articles = fs.readdirSync("src/lib/articles").filter(f => f.endsWith(".md")).map(f => fs.readFileSync(`src/lib/articles/${f}`).toString());
-//
-//   const compiled = await Promise.all(articles.map(a => compile(a)));
-//
-//   const series: { [key: string]: App.ArticleMetaData[] } = {};
-//
-//   compiled.forEach(a => {
-//     const cur_series: string | null = (a?.data?.fm as App.ArticleMetaData).series
-//     if (!cur_series) return;
-//
-//     if (series[cur_series]) {
-//       series[cur_series].push(a?.data?.fm as App.ArticleMetaData)
-//     } else {
-//       series[cur_series] = [a?.data?.fm as App.ArticleMetaData];
-//
-//     }
-//   }
-//   )
-//
-//   return compiled.map(a => {
-//     return {
-//       metadata: a?.data?.fm as App.ArticleMetaData,
-//       content: a?.data,
-//       seriesData: {
-//         articles: series[(a?.data?.fn as App.ArticleMetaData).series],
-//         name: (a?.data?.fn as App.ArticleMetaData).series
-//       }
-//
-//     }
-//
-//   })
-//     .sort((a, b) => new Date(b.metadata.date).getSeconds() - new Date(a.metadata.date).getSeconds())
-//
-// }
+export async function getArticles(): Promise<App.Article[]> {
+  const modules = import.meta.glob(`/src/articles/*.md`) as { [path: string]: App.MdsvexResolver };
+
+  const series: { [key: string]: App.ArticleMetaData[] } = {};
+
+  const articles: Array<App.Article> = [];
+
+  for (const [path, resolver] of Object.entries(modules)) {
+    const article = await resolver();
+
+    const metadata = article.metadata as unknown as App.ArticleMetaData;
+
+    assertArticleMetaData(metadata, path);
+
+    const cur_series: string | null = article.metadata?.series;
+
+    if (cur_series) {
+      if (series[cur_series]) {
+        series[cur_series].push(metadata);
+      } else {
+        series[cur_series] = [metadata];
+      }
+    }
+
+    articles.push({
+      metadata,
+      filename: path,
+      url: path.split("/").at(-1) ?? "",
+      content: article.default,
+      seriesData: cur_series
+        ? {
+          articles: series[cur_series],
+          name: cur_series
+        }
+        : undefined
+    });
+  }
+
+  return articles.sort(
+    (a, b) => new Date(a.metadata.date).valueOf() - new Date(b.metadata.date).valueOf()
+  );
+
+
+}
 
 export const [getArticlesContext, setArticlesContext] = createContext<App.Article[]>();
