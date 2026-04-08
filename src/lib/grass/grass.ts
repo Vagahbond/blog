@@ -50,7 +50,7 @@ export class GrassBlade {
 
   seed: number;
 
-  base: Level = new Level(0, 200, 40, 200);
+  base: Level = new Level(10, 200, 30, 200);
   l1: Level = new Level(10, 180, 20, 180);
   l2: Level = new Level(0, 140, 25, 140);
   l3: Level = new Level(15, 80, 38, 100);
@@ -73,11 +73,11 @@ export class GrassBlade {
 
     this.l1.multipy(1 - growth / 2, 1)
     this.l2.multipy(1 - growth / 2, 1)
-    this.l3.multipy(1 - growth / 2, 1)
-    this.l4.multipy(1 - growth / 2, 1)
-    this.l5.multipy(1 - growth / 2, 1)
+    this.l3.multipy(.8 - growth / 2, 1)
+    this.l4.multipy(.8 - growth / 2, 1)
+    this.l5.multipy(.7 - growth / 2, 1)
 
-    this.tip.multiply(1 - growth / 2, 1)
+    this.tip.multiply(.7 - growth / 2, 1)
   }
 
   applyModifier() {
@@ -115,22 +115,22 @@ export class GrassBlade {
 
   public getSwayedPath(dir: "left" | "right") {
 
-    const offset = this.RANDOMIZE_FACTOR / 4 * Math.random() * (dir === "left" ? -1 : 1)
+    const offset = this.RANDOMIZE_FACTOR / 3 * Math.random() * (dir === "left" ? -0.5 : 1)
 
 
     return `M ${this.base.left.x} ${this.base.left.y}
-       C ${this.l1.left.x + offset * 0.2} ${this.l1.left.y}, 
-          ${this.l2.left.x + offset * 0.4} ${this.l2.left.y}, 
-          ${this.l3.left.x + offset * 0.6} ${this.l3.left.y}
-       C ${this.l4.left.x + offset * 0.8} ${this.l4.left.y}, 
+       C ${this.l1.left.x + offset * 0.6} ${this.l1.left.y}, 
+          ${this.l2.left.x + offset * 0.8} ${this.l2.left.y}, 
+          ${this.l3.left.x + offset * 1} ${this.l3.left.y}
+       C ${this.l4.left.x + offset * 1} ${this.l4.left.y}, 
           ${this.l5.left.x + offset * 2} ${this.l5.left.y}, 
           ${this.tip.x + offset * 3} ${this.tip.y}
        C ${this.l5.right.x + offset * 2} ${this.l5.right.y}, 
-          ${this.l4.right.x + offset * 0.8} ${this.l4.right.y}, 
-          ${this.l3.right.x + offset * 0.6} ${this.l3.right.y}
-       C ${this.l2.right.x + offset * 0.4} ${this.l2.right.y}, 
-          ${this.l1.right.x + offset * 0.2} ${this.l1.right.y}, 
-          ${this.base.right.x} ${this.base.right.y}
+          ${this.l4.right.x + offset * 1} ${this.l4.right.y}, 
+          ${this.l3.right.x + offset * 1} ${this.l3.right.y}
+       C ${this.l2.right.x + offset * 0.8} ${this.l2.right.y}, 
+          ${this.l1.right.x + offset * 0.6} ${this.l1.right.y}, 
+          ${this.base.right.x + offset * 0.6} ${this.base.right.y}
        Z`
   }
 }

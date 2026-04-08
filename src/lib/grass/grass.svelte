@@ -6,10 +6,10 @@
 
 	onMount(() => {
 		setInterval(() => {
-			if (growthCoefficient < 0.1) {
+			if (growthCoefficient < 0.2) {
 				growthCoefficient += 0.1;
 			}
-		}, 10000);
+		}, 1000);
 	});
 
 	function randomBladeColor(rand: number) {
@@ -24,10 +24,10 @@
 </script>
 
 {#if growthCoefficient > 0.1}
-	<div class="grass-field">
+	<div class="grass-field grass">
 		{#each Array(90).fill(0) as _, i}
 			{@const color = randomBladeColor(Math.random())}
-			<GrassBlade {color} growth={growthCoefficient} />
+			<GrassBlade onclick={() => console.log('yoo')} {color} growth={growthCoefficient} />
 		{/each}
 	</div>
 {/if}
