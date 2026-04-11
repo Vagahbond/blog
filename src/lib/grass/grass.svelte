@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { GrassBlade } from './grass';
+	import { PUBLIC_GRASS_SERVER_URL } from '$env/static/public';
 	import GrassBladeComp from './grassBlade.svelte';
 	import { bladeToBuffer, bufferToLawn } from './ws';
 
@@ -15,7 +16,7 @@
 	let socket: WebSocket | undefined;
 
 	onMount(() => {
-		socket = new WebSocket(process.env.GRASS_SERVER_URL ?? 'ws://localhost:3012');
+		socket = new WebSocket((PUBLIC_GRASS_SERVER_URL as string) ?? 'ws://localhost:3012');
 
 		socket.addEventListener('open', (event) => {
 			console.log('Connected to the grass server');

@@ -6,10 +6,12 @@ buildNpmPackage {
   name = "blog";
   src = ../../.;
 
-  buildPhase = ''
-    export GRASS_SERVER_URL=${grassServerUrl} 
-    npm run build
+  GRASS_SERVER_URL = grassServerUrl;
 
+  buildPhase = ''
+    echo 'PUBLIC_GRASS_SERVER_URL=${grassServerUrl}' > ./.env
+
+    npm run build
     mkdir -p $out
     cp -r ./build/* $out
   '';

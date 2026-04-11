@@ -107,7 +107,7 @@
               "${self.packages.${pkgs.system}.grass}/bin/backend"
               "-p"
               (toString config.services.touches-grasses.grassServer.port)
-              "-i"
+              "-g"
               (toString config.services.touches-grasses.grassServer.grassTickIntervalSeconds)
             ];
           };
