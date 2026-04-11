@@ -29,7 +29,8 @@
     {
 
       packages = forAllSystems (pkgs: {
-        default = pkgs.callPackage ./nix/package.nix { };
+        frontend = pkgs.callPackage ./nix/packages/front.nix { };
+        grass = pkgs.callPackage ./nix/packages/grass.nix { };
       });
 
       devShells = forAllSystems (pkgs: {

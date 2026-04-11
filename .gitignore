@@ -1,6 +1,10 @@
 result
 node_modules
 
+**/**/result
+**/**/target
+
+
 # Output
 .output
 .vercel
