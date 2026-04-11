@@ -74,7 +74,7 @@
             root = self.packages.${pkgs.system}.frontend.override {
               grassServerUrl = "${
                 if config.services.touches-grasses.grassServer.secure then "wss" else "ws"
-              }://${config.services.touches-grasses.grassServer.host}:${toString config.services.touches-grasses.grassServer.port}";
+              }://${config.services.touches-grasses.grassServer.host}";
             };
           };
           ${config.services.touches-grasses.grassServer.host} =
