@@ -49,6 +49,13 @@
   config = lib.mkIf config.services.touches-grasses.enable (
     lib.mkMerge [
 
+      {
+        users.users.touches-grasses = {
+          isSystemUser = true;
+          group = "touches-grasses";
+        };
+      }
+
       (lib.mkIf config.services.touches-grasses.enableNginx {
         # Assert that if ngix is enabled, the main service has an address
         assertions = [
@@ -88,6 +95,7 @@
         systemd.services.touches-grasses = {
           wantedBy = [ "multi-user.target" ];
           serviceConfig = {
+            User = "touches-grasses";
             Type = "simple";
             ExecStart = lib.escapeShellArgs [
               "${self.packages.${pkgs.system}.backend}/bin/backend"
