@@ -46,7 +46,7 @@
     };
   };
 
-  config = lib.mkIf config.services.touches-grasses.enable (
+  config = lib.mkIf config.services.touchesGrasses.enable (
     lib.mkMerge [
 
       {
@@ -58,33 +58,33 @@
         users.groups.touches-grasses = { };
       }
 
-      (lib.mkIf config.services.touches-grasses.enableNginx {
+      (lib.mkIf config.services.touchesGrasses.enableNginx {
         # Assert that if ngix is enabled, the main service has an address
         assertions = [
           {
-            assertion = config.services.touches-grasses.address != null;
+            assertion = config.services.touchesGrasses.address != null;
             message = "nginx is enabled, but the main service has no address";
           }
         ];
 
         services.nginx.virtualHosts = {
-          ${config.services.touches-grasses.address} = {
+          ${config.services.touchesGrasses.address} = {
             enableACME = true;
             forceSSL = true;
             root = self.packages.${pkgs.system}.frontend.override {
               grassServerUrl = "${
-                if config.services.touches-grasses.grassServer.secure then "wss" else "ws"
-              }://${config.services.touches-grasses.grassServer.host}";
+                if config.services.touchesGrasses.grassServer.secure then "wss" else "ws"
+              }://${config.services.touchesGrasses.grassServer.host}";
             };
           };
-          ${config.services.touches-grasses.grassServer.host} =
-            lib.mkIf config.services.touches-grasses.grassServer.enable
+          ${config.services.touchesGrasses.grassServer.host} =
+            lib.mkIf config.services.touchesGrasses.grassServer.enable
               {
                 enableACME = true;
                 forceSSL = true;
                 locations."/" = {
                   proxyWebsockets = true; # needed if you need to use WebSocket
-                  proxyPass = "http://127.0.0.1:${toString config.services.touches-grasses.grassServer.port}";
+                  proxyPass = "http://127.0.0.1:${toString config.services.touchesGrasses.grassServer.port}";
                   # proxyHttpVersion = "1.1"; # Required for WebSockets
                   # proxySetHeader = [
                   #   "Upgrade $http_upgrade" # Required for WebSocket upgrade
@@ -101,9 +101,9 @@
         };
       })
 
-      (lib.mkIf config.services.touches-grasses.grassServer.enable {
+      (lib.mkIf config.services.touchesGrasses.grassServer.enable {
 
-        systemd.services.touches-grasses-grass = {
+        systemd.services.touchesGrasses-grass = {
           wantedBy = [ "multi-user.target" ];
           serviceConfig = {
             User = "touches-grasses";
@@ -111,9 +111,9 @@
             ExecStart = lib.escapeShellArgs [
               "${self.packages.${pkgs.system}.grass}/bin/backend"
               "-p"
-              (toString config.services.touches-grasses.grassServer.port)
+              (toString config.services.touchesGrasses.grassServer.port)
               "-g"
-              (toString config.services.touches-grasses.grassServer.grassTickIntervalSeconds)
+              (toString config.services.touchesGrasses.grassServer.grassTickIntervalSeconds)
             ];
           };
         };
