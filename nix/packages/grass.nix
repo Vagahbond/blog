@@ -5,7 +5,7 @@
 }:
 rustPlatform.buildRustPackage {
   name = "blog-grass";
-  src = ../../wasm;
+  src = ../../backend;
 
   WASM_PACK_CACHE = "/tmp/wasm-pack-cache";
   CARGO_HOME = "/tmp/cargo-home";
