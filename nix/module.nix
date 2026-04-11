@@ -104,7 +104,7 @@
             User = "touches-grasses";
             Type = "simple";
             ExecStart = lib.escapeShellArgs [
-              "${self.packages.${pkgs.system}.backend}/bin/backend"
+              "${self.packages.${pkgs.system}.grass}/bin/backend"
               "-p"
               (toString config.services.touches-grasses.grassServer.port)
               "-i"
