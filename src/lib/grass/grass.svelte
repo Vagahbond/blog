@@ -15,7 +15,7 @@
 	let socket: WebSocket | undefined;
 
 	onMount(() => {
-		socket = new WebSocket('ws://localhost:3012');
+		socket = new WebSocket(process.env.GRASS_SERVER_URL ?? 'ws://localhost:3012');
 
 		socket.addEventListener('open', (event) => {
 			console.log('Connected to the grass server');

@@ -1,11 +1,13 @@
 {
   buildNpmPackage,
+  grassServerUrl ? "ws://localhost:3012",
 }:
 buildNpmPackage {
   name = "blog";
   src = ../.;
 
   buildPhase = ''
+    export GRASS_SERVER_URL=${grassServerUrl} 
     npm run build
 
     mkdir -p $out

@@ -1,5 +1,7 @@
 use std::{sync::Arc, time::Duration};
 
+use clap::Parser;
+
 use futures_util::{SinkExt, StreamExt};
 
 use tokio::{
@@ -14,10 +16,24 @@ use crate::lib::grass::Grass;
 
 mod lib;
 
+#[derive(clap::Parser)]
+struct Args {
+    #[arg(short, long, default_value = "3012")]
+    port: u16,
+
+    #[arg(short, long, default_value = "10")]
+    grass_tick_interval_seconds: u64,
+}
+
 #[tokio::main]
 async fn main() {
+    let args = Args::parse();
+
+    let port = args.port;
+    let tick_time = args.grass_tick_interval_seconds;
+
     // Bind TCP listener on port 8080
-    let listener = TcpListener::bind("127.0.0.1:3012")
+    let listener = TcpListener::bind(format!("127.0.0.1:{}", port))
         .await
         .expect("Failed to bind");
 
@@ -32,7 +48,7 @@ async fn main() {
     let gl_broadcast_sender = grass_tx.clone();
 
     let grass_lifecycle = tokio::spawn(async move {
-        let mut grass_interval = interval(Duration::from_secs(10));
+        let mut grass_interval = interval(Duration::from_secs(tick_time));
 
         loop {
             grass_interval.tick().await;

@@ -6,7 +6,7 @@
   };
 
   outputs =
-    { nixpkgs, ... }:
+    { nixpkgs, self, ... }:
     let
       forAllSystems =
         function:
@@ -27,6 +27,8 @@
           );
     in
     {
+
+      nixosModules.default = import ./nix/module.nix { inherit self; };
 
       packages = forAllSystems (pkgs: {
         frontend = pkgs.callPackage ./nix/packages/front.nix { };
