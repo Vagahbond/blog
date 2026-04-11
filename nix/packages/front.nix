@@ -4,7 +4,7 @@
 }:
 buildNpmPackage {
   name = "blog";
-  src = ../.;
+  src = ../../.;
 
   buildPhase = ''
     export GRASS_SERVER_URL=${grassServerUrl} 
@@ -14,7 +14,7 @@ buildNpmPackage {
     cp -r ./build/* $out
   '';
 
-  packageJSON = ../package.json;
-  packageLock = ../package-lock.json;
+  packageJSON = ../../package.json;
+  packageLock = ../../package-lock.json;
   npmDepsHash = "sha256-mPBvws6N8Use7etqtJ9c2eOHYWlUarCcfssZgDaM98o=";
 }
