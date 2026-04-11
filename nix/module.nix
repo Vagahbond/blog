@@ -85,18 +85,18 @@
                 locations."/" = {
                   proxyWebsockets = true; # needed if you need to use WebSocket
                   proxyPass = "http://127.0.0.1:${toString config.services.touches-grasses.grassServer.port}";
-                  proxyHttpVersion = "1.1"; # Required for WebSockets
-                  proxySetHeader = [
-                    "Upgrade $http_upgrade" # Required for WebSocket upgrade
-                    "Connection \"upgrade\"" # Required for WebSocket upgrade
-                  ];
+                  # proxyHttpVersion = "1.1"; # Required for WebSockets
+                  # proxySetHeader = [
+                  #   "Upgrade $http_upgrade" # Required for WebSocket upgrade
+                  #   "Connection \"upgrade\"" # Required for WebSocket upgrade
+                  # ];
                 };
 
-                # extraConfig = ''
-                #   proxy_http_version 1.1;
-                #   proxy_set_header Upgrade $http_upgrade;
-                #   proxy_set_header Connection "upgrade";
-                # '';
+                extraConfig = ''
+                  proxy_http_version 1.1;
+                  proxy_set_header Upgrade $http_upgrade;
+                  proxy_set_header Connection "upgrade";
+                '';
               };
         };
       })
