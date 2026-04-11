@@ -6,7 +6,7 @@
   ...
 }:
 {
-  options.services.touches-grasses = {
+  options.services.touchesGrasses = {
     enable = lib.mkEnableOption "touches-grasses";
 
     address = lib.mkOption {
