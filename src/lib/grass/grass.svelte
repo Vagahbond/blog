@@ -22,7 +22,6 @@
 		});
 
 		socket.addEventListener('message', async (event) => {
-			console.log('message: ', event.data);
 			bufferToLawn(event.data).then((l) => setBlades(l));
 		});
 

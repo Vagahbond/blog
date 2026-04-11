@@ -98,7 +98,7 @@
 
       (lib.mkIf config.services.touches-grasses.grassServer.enable {
 
-        systemd.services.touches-grasses = {
+        systemd.services.touches-grasses-grass = {
           wantedBy = [ "multi-user.target" ];
           serviceConfig = {
             User = "touches-grasses";

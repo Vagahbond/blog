@@ -59,7 +59,6 @@ async fn main() {
                 blade.tick();
             }
 
-            println!("lawn_h: {:?}", lawn_h.len());
 
             if lawn_h.len() < 151 {
                 let grass = Grass::new();
