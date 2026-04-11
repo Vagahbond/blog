@@ -80,7 +80,11 @@
               {
                 enableACME = true;
                 forceSSL = true;
-                proxyPass = "http://127.0.0.1:${toString config.services.touches-grasses.grassServer.port}";
+                locations."/" = {
+                  proxyWebsockets = true; # needed if you need to use WebSocket
+                  proxyPass = "http://127.0.0.1:${toString config.services.touches-grasses.grassServer.port}";
+                };
+
                 extraConfig = ''
                   proxy_http_version 1.1;
                   proxy_set_header Upgrade $http_upgrade;
