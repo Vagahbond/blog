@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { bladeToBuffer, bufferToLawn, GrassBlade } from './grass';
+	import { GrassBlade } from './grass';
 	import GrassBladeComp from './grassBlade.svelte';
+	import { bladeToBuffer, bufferToLawn } from './ws';
 
 	let blades = $state<GrassBlade[]>([]);
+	let cutBlades = $state<GrassBlade[]>([]);
 
 	function setBlades(lawn: GrassBlade[]) {
+		cutBlades = blades.filter((b) => !lawn.find((l) => l.id === b.id));
 		blades = lawn;
 	}
 
@@ -19,13 +22,8 @@
 		});
 
 		socket.addEventListener('message', async (event) => {
-			let lawn: GrassBlade[] = [];
-			try {
-				lawn = await bufferToLawn(event.data);
-			} catch (e) {
-				console.error(e);
-			}
-			setBlades(lawn);
+			console.log('message: ', event.data);
+			bufferToLawn(event.data).then((l) => setBlades(l));
 		});
 
 		// Handle errors
@@ -39,17 +37,20 @@
 		});
 	});
 
-	function onBladeCLicked(blade: GrassBlade, index: number) {
+	function onBladeCLicked(blade: GrassBlade) {
+		const buffer = bladeToBuffer(blade);
 		if (socket) {
-			const buffer = bladeToBuffer(blade);
-			socket.send(bladeToBuffer(blade));
+			socket.send(buffer);
 		}
 	}
 </script>
 
 <div class="grass-field grass">
-	{#each blades as blade, i (i)}
-		<GrassBladeComp onclick={() => onBladeCLicked(blade, i)} {blade} />
+	{#each blades as blade (blade.id)}
+		<GrassBladeComp onclick={() => onBladeCLicked(blade)} {blade} />
+	{/each}
+	{#each cutBlades as blade (blade.id)}
+		<GrassBladeComp initialCut={true} onclick={() => {}} {blade} />
 	{/each}
 </div>
 

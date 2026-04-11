@@ -1,11 +1,31 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	let { initialCut = false, blade, onclick } = $props();
 
-	let { blade, onclick } = $props();
+	let nowCut = $state(false);
+
+	let cut = $derived(nowCut || initialCut);
+
+	function onBladeCLicked() {
+		onclick();
+		/*if (cut) {
+			return;
+		}
+
+		cut = true;
+
+		setTimeout(() => {}, 1000); */
+	}
 </script>
 
-<button class="blade-container" style:left={`${blade.offset * 100}%`} {onclick}>
-	<svg xmlns="http://www.w3.org/2000/svg" height={`${blade.age * 90}vh`} viewBox="0 0 30 200">
+<button class={`blade-container  `} style:left={`${blade.offset * 95}%`}>
+	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+	<svg
+		class={cut ? 'cut' : ''}
+		onclick={onBladeCLicked}
+		xmlns="http://www.w3.org/2000/svg"
+		height={`${blade.age * 90}vh`}
+		viewBox="0 0 30 200"
+	>
 		<defs>
 			<linearGradient id={`grass-gradient-${blade.id}`} x1="0" y1="1" x2="0" y2="0">
 				<stop offset="0%" stop-color={blade.color.colorBase} />
@@ -40,23 +60,47 @@
 </button>
 
 <style>
+	@keyframes blade-tip-and-fall {
+		0% {
+			transform: translateY(0);
+		}
+
+		5% {
+			transform: translateY(5%) translateX(-5px) rotate(-30deg);
+		}
+
+		100% {
+			transform: translateY(100%) rotate(-120deg);
+		}
+	}
+
+	.cut {
+		animation: blade-tip-and-fall 2s ease-out forwards;
+	}
+
 	.blade-container {
 		position: absolute;
-		bottom: 0;
+		bottom: -1em;
 		background: transparent;
 		margin: 0;
 		padding: 0;
-		width: min-content;
-		height: min-content;
 		display: block;
 		border: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.cut svg {
+		pointer-events: none;
 	}
 
 	svg {
 		all: unset;
 		cursor:
-			url('/cursor/scissors_64.png') 32 32,
+			url('/cursor/scissors_64.png') 24 32,
 			auto;
-		z-index: 200;
+		padding: 0;
+		margin: 0;
+		position: relative;
 	}
 </style>

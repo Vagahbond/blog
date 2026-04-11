@@ -32,7 +32,7 @@ async fn main() {
     let gl_broadcast_sender = grass_tx.clone();
 
     let grass_lifecycle = tokio::spawn(async move {
-        let mut grass_interval = interval(Duration::from_secs(5));
+        let mut grass_interval = interval(Duration::from_secs(10));
 
         loop {
             grass_interval.tick().await;
@@ -42,6 +42,8 @@ async fn main() {
             for blade in lawn_h.iter_mut() {
                 blade.tick();
             }
+
+            println!("lawn_h: {:?}", lawn_h.len());
 
             if lawn_h.len() < 151 {
                 let grass = Grass::new();
@@ -104,6 +106,8 @@ async fn main() {
 
 
                         let blade_id: u32 = u32::from_ne_bytes(bytes[5..9].try_into().unwrap());
+
+                        println!("Deleting blade id: {}", blade_id);
 
                         let mut lawn_h = ws_lawn.lock().await;
 

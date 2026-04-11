@@ -48,7 +48,7 @@ impl Grass {
 
     pub fn tick(&mut self) {
         if self.age < 100 {
-            self.age += 1;
+            self.age += 10;
         }
     }
 }
