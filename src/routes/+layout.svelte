@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { setArticlesContext } from '$lib/articles/articles.js';
 	import Grass from '$lib/grass/grass.svelte';
 	import './archie.css';
 	import './style.css';

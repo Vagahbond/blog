@@ -1,36 +1,57 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import GrassBlade from './grassBlade.svelte';
+	import { bladeToBuffer, bufferToLawn, GrassBlade } from './grass';
+	import GrassBladeComp from './grassBlade.svelte';
 
-	let growthCoefficient = $state(0);
+	let blades = $state<GrassBlade[]>([]);
+
+	function setBlades(lawn: GrassBlade[]) {
+		blades = lawn;
+	}
+
+	let socket: WebSocket | undefined;
 
 	onMount(() => {
-		setInterval(() => {
-			if (growthCoefficient < 0.2) {
-				growthCoefficient += 0.1;
+		socket = new WebSocket('ws://localhost:3012');
+
+		socket.addEventListener('open', (event) => {
+			console.log('Connected to the grass server');
+		});
+
+		socket.addEventListener('message', async (event) => {
+			let lawn: GrassBlade[] = [];
+			try {
+				lawn = await bufferToLawn(event.data);
+			} catch (e) {
+				console.error(e);
 			}
-		}, 1000);
+			setBlades(lawn);
+		});
+
+		// Handle errors
+		socket.addEventListener('error', (event) => {
+			console.error('WebSocket error:', event);
+		});
+
+		// Connection closed
+		socket.addEventListener('close', (event) => {
+			console.log('Disconnected from the server');
+		});
 	});
 
-	function randomBladeColor(rand: number) {
-		const baseHue = 120; // green
-		const hue = baseHue + (rand * 80 - 40);
-		return {
-			colorBase: `hsl(${hue}, 50%, 30%)`, // dark base
-			colorMid: `hsl(${hue}, 50%, 35%)`, // mid
-			colorTip: `hsl(${hue}, 45%, 60%)` // light tip
-		};
+	function onBladeCLicked(blade: GrassBlade, index: number) {
+		if (socket) {
+			const buffer = bladeToBuffer(blade);
+			socket.send(bladeToBuffer(blade));
+		}
 	}
 </script>
 
-{#if growthCoefficient > 0.1}
-	<div class="grass-field grass">
-		{#each Array(90).fill(0) as _, i}
-			{@const color = randomBladeColor(Math.random())}
-			<GrassBlade onclick={() => console.log('yoo')} {color} growth={growthCoefficient} />
-		{/each}
-	</div>
-{/if}
+<div class="grass-field grass">
+	{#each blades as blade, i (i)}
+		<GrassBladeComp onclick={() => onBladeCLicked(blade, i)} {blade} />
+	{/each}
+</div>
 
 <style>
 	.grass-field {

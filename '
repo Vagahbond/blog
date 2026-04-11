@@ -1,0 +1,49 @@
+use rand::prelude::*;
+
+pub type GrassBladeId = f64;
+
+pub struct Grass {
+    age: u8, // age 1 to 100
+    // // Random number at the base of the generation, even though that means there may
+    // be some doubles
+    pub seed: f64,
+    pub id: i32,
+}
+
+static GRASS_ID: i32 = 0;
+
+impl Grass {
+    pub fn new(id: i32) -> Self {
+        let mut rng = rand::rng();
+
+        return Grass {
+            id,
+            age: 0,
+            seed: rng.random::<f64>(), // Seed doubles as an ID
+        };
+    }
+
+    /*
+     *  formatting of a grass blade:
+     *  first bytes -> "grass"
+     *  next byte : age
+     *  next 8 bytes seed
+     */
+    pub fn wrap(&self) -> [u8; 9] {
+        let mut res: [u8; 9] = [0; 9];
+
+        res[0] = self.age.clone();
+
+        res[1..9]
+            .as_mut()
+            .clone_from_slice(&self.seed.to_ne_bytes());
+
+        return res;
+    }
+
+    pub fn tick(&mut self) {
+        if self.age < 100 {
+            self.age += 1;
+        }
+    }
+}

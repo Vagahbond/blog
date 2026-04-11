@@ -1,31 +1,49 @@
-class Point {
+import { createContext } from "svelte";
+
+type GrassSeed = [number, number, number, number, number, number, number, number]
+
+interface Point {
   x: number
   y: number
-
-  constructor(x: number, y: number) {
-    this.x = x
-    this.y = y
-  }
-
-  add(adderx: number, addery: number) {
-    this.x += adderx;
-    this.y += addery;
-  }
-
-  multiply(factorx: number, factory: number) {
-    this.x *= factorx;
-    this.y *= factory;
-  }
-
 }
+
+function mkPoint(x: number, y: number) {
+  return {
+    x: x,
+    y: y
+  }
+}
+
+function addToPoint(point: Point, adderx: number, addery: number) {
+  point.x += adderx;
+  point.y += addery;
+}
+
+function multiplyPoint(point: Point, factorx: number, factory: number) {
+  point.x *= factorx;
+  point.y *= factory;
+}
+
+
+function randomBladeColor(rand: number) {
+  const baseHue = 100; // green
+  const hue = baseHue + (rand * 70 - 35);
+  return {
+    colorBase: `hsl(${hue}, 50%, 30%)`, // dark base
+    colorMid: `hsl(${hue}, 50%, 35%)`,  // mid
+    colorTip: `hsl(${hue}, 45%, 60%)`   // light tip
+  };
+}
+
 
 class Level {
   left: Point;
   right: Point;
 
   constructor(lx: number, ly: number, rx: number, ry: number) {
-    this.left = new Point(lx, ly);
-    this.right = new Point(rx, ry);
+    this.left = mkPoint(lx, ly);
+    this.right = mkPoint(rx, ry);
+
   }
 
   multipy(factorx: number, factory: number) {
@@ -48,7 +66,15 @@ class Level {
 export class GrassBlade {
   RANDOMIZE_FACTOR = 40;
 
-  seed: number;
+  age: number; //max age is 1
+
+  color;
+  offset;
+
+  id: number;
+
+  private seed: GrassSeed;
+  seedAccessIndex = 0;
 
   base: Level = new Level(10, 200, 30, 200);
   l1: Level = new Level(10, 180, 20, 180);
@@ -56,19 +82,35 @@ export class GrassBlade {
   l3: Level = new Level(15, 80, 38, 100);
   l4: Level = new Level(18, 40, 45, 60);
   l5: Level = new Level(25, 10, 40, 20);
-  tip: Point = new Point(32, 5)
+  tip: Point = mkPoint(32, 5)
+
+  public getRandomValue(): number {
+    const res = this.seed[this.seedAccessIndex]
+    this.seedAccessIndex = (this.seedAccessIndex + 1) % 8
+    return res
+  }
 
 
-  constructor(growth: number) {
-    this.seed = Math.random();
+  constructor(age: number = 0, seed: GrassSeed, id: number) {
+    this.seed = seed;
+
+    this.color = randomBladeColor(this.getRandomValue())
+
+    this.offset = this.getRandomValue();
+
+    this.age = age;
+
+    this.id = id;
 
     this.applyModifier()
 
-    this.applyGrowth(growth)
+    this.applyThinness(this.age)
+
 
   }
 
-  applyGrowth(growth: number) {
+
+  applyThinness(growth: number) {
     this.base.multipy(1 - growth / 2, 1)
 
     this.l1.multipy(1 - growth / 2, 1)
@@ -77,22 +119,22 @@ export class GrassBlade {
     this.l4.multipy(.8 - growth / 2, 1)
     this.l5.multipy(.7 - growth / 2, 1)
 
-    this.tip.multiply(.7 - growth / 2, 1)
+    multiplyPoint(this.tip, .7 - growth / 2, 1)
   }
 
   applyModifier() {
-    const mody = this.seed * this.RANDOMIZE_FACTOR - this.RANDOMIZE_FACTOR / 2
+    const mody = this.getRandomValue() * this.RANDOMIZE_FACTOR - this.RANDOMIZE_FACTOR / 2
     const modx = mody / 2
 
-    this.base.add(Math.random() * modx, 0)
+    this.base.add(this.getRandomValue() * modx, 0)
 
-    this.l1.add(Math.random() * modx, Math.random() * mody)
-    this.l2.add(Math.random() * modx, Math.random() * mody)
-    this.l3.add(Math.random() * modx, Math.random() * mody)
-    this.l4.add(Math.random() * modx, Math.random() * mody)
-    this.l5.add(Math.random() * modx, Math.random() * mody)
+    this.l1.add(this.getRandomValue() * modx, this.getRandomValue() * mody)
+    this.l2.add(this.getRandomValue() * modx, this.getRandomValue() * mody)
+    this.l3.add(this.getRandomValue() * modx, this.getRandomValue() * mody)
+    this.l4.add(this.getRandomValue() * modx, this.getRandomValue() * mody)
+    this.l5.add(this.getRandomValue() * modx, this.getRandomValue() * mody)
 
-    this.tip.add(Math.random() * modx, Math.random() * mody)
+    addToPoint(this.tip, this.getRandomValue() * modx, this.getRandomValue() * mody)
   }
 
   public getPath() {
@@ -115,7 +157,7 @@ export class GrassBlade {
 
   public getSwayedPath(dir: "left" | "right") {
 
-    const offset = this.RANDOMIZE_FACTOR / 3 * Math.random() * (dir === "left" ? -0.5 : 1)
+    const offset = this.RANDOMIZE_FACTOR / 3 * this.getRandomValue() * (dir === "left" ? -0.5 : 1)
 
 
     return `M ${this.base.left.x} ${this.base.left.y}
@@ -133,4 +175,58 @@ export class GrassBlade {
           ${this.base.right.x + offset * 0.6} ${this.base.right.y}
        Z`
   }
+
 }
+
+export async function bufferToLawn(src: Blob): Promise<Array<GrassBlade>> {
+  const buffer = await src.arrayBuffer();
+
+  let index = 0;
+
+  const res = [];
+
+  const view = new DataView(buffer)
+  while (index < buffer.byteLength) {
+    // age is uint8
+    const age = view.getUint8(index) / 100
+
+    // Seed is float64 but we use it as several unsigned int.
+    let seed = new Array<number>(8).fill(0) as GrassSeed;
+
+    for (let i = 1; i < 9; i++)
+      seed[i - 1] = view.getUint8(index + i) / 255
+
+    let id = view.getUint32(index + 9, true);
+
+    res.push(new GrassBlade(age, seed, id))
+
+    index += 13;
+  }
+
+  return res;
+
+}
+
+export function bladeToBuffer(src: GrassBlade): ArrayBufferLike {
+
+  console.log(src.id)
+
+
+  let buffer = new ArrayBuffer(5 + 4);
+
+  const view = new DataView(buffer);
+
+  const header = "grass";
+
+
+
+  for (let i = 0; i < header.length; ++i) {
+    view.setUint8(i, header.charCodeAt(i))
+  }
+
+  view.setUint32(header.length, src.id, true);
+
+
+  return buffer;
+}
+

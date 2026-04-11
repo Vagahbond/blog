@@ -34,8 +34,11 @@
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.nodejs
+          buildInputs = with pkgs; [
+            nodejs
+            cargo
+            rustc
+            rustfmt
           ];
 
           shellHook = ''

@@ -1,0 +1,1 @@
+futures_util::sink::Send<'_, SplitSink<WebSocketStream<tokio::net::TcpStream>, Message>, Message>

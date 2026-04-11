@@ -109,6 +109,3 @@ time {
   font-family: "DepartureMono";
 }
 
-.grass * {
-  cursor: url('/cursor/scissors.cur'), pointer;
-}
