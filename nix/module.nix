@@ -54,6 +54,8 @@
           isSystemUser = true;
           group = "touches-grasses";
         };
+
+        users.groups.touches-grasses = { };
       }
 
       (lib.mkIf config.services.touches-grasses.enableNginx {
