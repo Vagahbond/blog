@@ -18,5 +18,5 @@ buildNpmPackage {
 
   packageJSON = ../../package.json;
   packageLock = ../../package-lock.json;
-  npmDepsHash = "sha256-mPBvws6N8Use7etqtJ9c2eOHYWlUarCcfssZgDaM98o=";
+  npmDepsHash = "sha256-aTir5gDjCMF9osOCC1NORgVw4pJVOhgn25/EyYPu2cY=";
 }
