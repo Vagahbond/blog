@@ -1,8 +1,24 @@
 <script lang="ts">
+	import Fuse from 'fuse.js';
+
 	const { data } = $props();
 
-	const series: { [series: string]: Array<App.Article> } = $derived.by(() => {
-		return data.articles
+	let search: string = $state('');
+
+	let filtered = $derived.by(() => {
+		if (search.length === 0) return data.articles;
+		return fuseIndex.search(search).map((a) => a.item);
+	});
+
+	let fuseIndex: Fuse<App.Article> = $derived.by(() => {
+		return new Fuse(data.articles, {
+			keys: ['metadata.title', 'metadata.tldr', 'seriesData.name'],
+			threshold: 0.3
+		});
+	});
+
+	let series: { [series: string]: Array<App.Article> } = $derived.by(() => {
+		return filtered
 			.filter((a) => a.seriesData)
 			.sort(
 				(a, b) =>
@@ -21,8 +37,8 @@
 			}, {});
 	});
 
-	const loneArticles: Array<App.Article> = $derived.by(() => {
-		return data.articles
+	let loneArticles: Array<App.Article> = $derived.by(() => {
+		return filtered
 			.filter((a) => !a.seriesData)
 			.sort(
 				(a, b) =>
@@ -46,6 +62,8 @@
 		}).format(new Date(date ?? ''));
 	}
 </script>
+
+<input class="search" type="search" placeholder="Rechercher" bind:value={search} />
 
 <h1 class="title">Séries</h1>
 
@@ -75,3 +93,17 @@
 		</div>
 	{/each}
 </section>
+
+<style>
+	.search {
+		width: 100%;
+		padding: 0.5rem;
+		border: 3px solid var(--color-primary);
+		margin: 1rem;
+		font-family: DepartureMono;
+	}
+
+	.search:focus {
+		outline: none;
+	}
+</style>
