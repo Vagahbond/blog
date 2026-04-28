@@ -25,6 +25,7 @@
               }
             )
           );
+
     in
     {
 
@@ -33,21 +34,46 @@
       packages = forAllSystems (pkgs: {
         frontend = pkgs.callPackage ./nix/packages/front.nix { };
         grass = pkgs.callPackage ./nix/packages/grass.nix { };
+        comments = pkgs.callPackage ./nix/packages/comments.nix { };
       });
 
-      devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            nodejs
-            cargo
-            rustc
-            rustfmt
-          ];
+      devShells = forAllSystems (
+        pkgs:
+        let
+          db = import ./nix/database.nix {
+            inherit pkgs;
+            project = "blog";
+          };
 
-          shellHook = ''
-            echo Now developping my blog!
-          '';
-        };
-      });
+        in
+        {
+          default = pkgs.mkShell {
+            buildInputs = with db; [
+              pkgs.nodejs
+              pkgs.postgresql
+              pkgs.cargo
+              pkgs.rustc
+              pkgs.rustfmt
+
+              pgconfigure
+              pgstart
+              pginit
+              pgstop
+              pgseed
+              pgdump
+
+            ];
+
+            shellHook = ''
+              echo "pginit init database"
+              echo "pgstart start database"
+              echo "pgconfigure create db and user"
+              echo "pgdump to dump db in database.sql"
+
+              echo Now developping my blog!
+            '';
+          };
+        }
+      );
     };
 }

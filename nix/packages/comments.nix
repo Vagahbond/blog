@@ -4,14 +4,14 @@
   ...
 }:
 rustPlatform.buildRustPackage {
-  name = "blog-grass";
-  src = ../../backend/grass;
+  name = "blog-comments";
+  src = ../../backend/comments;
 
   WASM_PACK_CACHE = "/tmp/wasm-pack-cache";
   CARGO_HOME = "/tmp/cargo-home";
 
   cargoLock = {
-    lockFile = ../../backend/grass/Cargo.lock;
+    lockFile = ../../backend/comments/Cargo.lock;
   };
 
   nativeBuildInputs = with pkgs; [

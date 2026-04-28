@@ -1,0 +1,8 @@
+2026-04-28 14:45:43.055 NZST [36953] LOG:  starting PostgreSQL 17.9 on aarch64-apple-darwin25.3.0, compiled by clang version 21.1.8, 64-bit
+2026-04-28 14:45:43.056 NZST [36953] LOG:  listening on IPv6 address "::1", port 5432
+2026-04-28 14:45:43.056 NZST [36953] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-04-28 14:45:43.057 NZST [36953] LOG:  listening on Unix socket "./.s.PGSQL.5432"
+2026-04-28 14:45:43.058 NZST [36956] LOG:  database system was shut down at 2026-04-28 14:45:23 NZST
+2026-04-28 14:45:43.060 NZST [36953] LOG:  database system is ready to accept connections
+2026-04-28 14:50:43.057 NZST [36954] LOG:  checkpoint starting: time
+2026-04-28 14:50:46.615 NZST [36954] LOG:  checkpoint complete: wrote 38 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.553 s, sync=0.002 s, total=3.559 s; sync files=11, longest=0.001 s, average=0.001 s; distance=198 kB, estimate=198 kB; lsn=0/1544558, redo lsn=0/1544500

@@ -44,6 +44,27 @@
         description = "Use wss:// instead of ws:// for WebSocket connections";
       };
     };
+    commentsServer = {
+      enable = lib.mkEnableOption "comments-server";
+
+      host = lib.mkOption {
+        type = lib.types.str;
+        default = "127.0.0.1";
+        description = "Host to bind the comments server to";
+      };
+
+      port = lib.mkOption {
+        type = lib.types.port;
+        default = 3013;
+        description = "Port to bind the comments server to";
+      };
+
+      secure = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Use wss:// instead of ws:// for WebSocket connections";
+      };
+    };
   };
 
   config = lib.mkIf config.services.touchesGrasses.enable (
@@ -98,6 +119,23 @@
                   proxy_set_header Connection "upgrade";
                 '';
               };
+
+          ${config.services.touchesGrasses.commentsServer.host} =
+            lib.mkIf config.services.touchesGrasses.commentsServer.enable
+              {
+                enableACME = true;
+                forceSSL = true;
+                locations."/" = {
+                  proxyWebsockets = true; # needed if you need to use WebSocket
+                  proxyPass = "http://127.0.0.1:${toString config.services.touchesGrasses.commentsServer.port}";
+                };
+
+                extraConfig = ''
+                  proxy_http_version 1.1;
+                  proxy_set_header Upgrade $http_upgrade;
+                  proxy_set_header Connection "upgrade";
+                '';
+              };
         };
       })
 
@@ -109,7 +147,7 @@
             User = "touches-grasses";
             Type = "simple";
             ExecStart = lib.escapeShellArgs [
-              "${self.packages.${pkgs.system}.grass}/bin/backend"
+              "${self.packages.${pkgs.system}.grass}/bin/grass"
               "-p"
               (toString config.services.touchesGrasses.grassServer.port)
               "-g"
@@ -119,6 +157,35 @@
         };
       })
 
+      (lib.mkIf config.services.touchesGrasses.commentsServer.enable {
+
+        system.services.postgres = {
+          ensureDatabases = [ "touches-grasses" ];
+          ensureUsers = [
+            {
+              name = "touches-grasses";
+              ensurePermissions = {
+                "DATABASE touches-grasses" = "ALL PRIVILEGES";
+              };
+            }
+          ];
+        };
+
+        systemd.services.touchesGrasses-comments = {
+          wantedBy = [ "multi-user.target" ];
+          serviceConfig = {
+            User = "touches-grasses";
+            Type = "simple";
+            ExecStart = lib.escapeShellArgs [
+              "${self.packages.${pkgs.system}.comments}/bin/comments"
+              "-p"
+              (toString config.services.touchesGrasses.grassServer.port)
+              "-g"
+              (toString config.services.touchesGrasses.grassServer.grassTickIntervalSeconds)
+            ];
+          };
+        };
+      })
     ]
   );
 }
